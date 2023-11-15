@@ -3,8 +3,8 @@
 # Bytte SDK
     Autor Carlos Garzón.
     Fecha de creación 15 de Noviembre 2023.
-    versión Documentación  -.-.-
-    Versión SDK Bytte -.-.-
+    versión Documento  -.-.-
+
 # Documento Integración SDK Nativo IOS
 ### CONFIDENCIALIDAD
 
@@ -150,7 +150,7 @@ Para realizar el llamado de captura facial V1 es necesario inicializar y agregar
 Para realizar el llamado de captura facial V2 es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
 (Swift)
-![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/FaceV2.png)
+![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/Facev2.png)
 
 
 ### 3.5.1 Configuración Parámetros:
