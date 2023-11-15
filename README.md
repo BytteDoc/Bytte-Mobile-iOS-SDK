@@ -1,4 +1,4 @@
-![Directories](https://www.bytte.com.co/ftpaccess/Varios/CarlosG/ImgDocumentation/logo.png)
+![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/LogoBytte.png)
 
 # Bytte SDK
     Autor Carlos Garzón.
@@ -153,7 +153,7 @@ Al realizar los llamados correspondientes para todas las capturas se genera una 
 
 
 
-![Directories](https://www.bytte.com.co/ftpaccess/Varios/CarlosG/ImgDocumentation/logo.png)
+![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/LogoBytte.png)
 | Bytte S.A.S.      |
 | ------------------ |
 | Av. Calle 26 No. 69 D – 91 Torre 1 Of. 407       |
