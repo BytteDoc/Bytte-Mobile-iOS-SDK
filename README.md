@@ -125,6 +125,25 @@ Para realizar el llamado de captura dactilar es necesario inicializar y agregar 
 ### 3.4.2 Respuesta Captura:
 
 
+### 3.5. Captura Biometria Facial V1:
+
+Para realizar el llamado de captura facial V1 es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
+
+(Swift)
+![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/FaceV1.png)
+
+
+### 3.5.1 Configuración Parámetros:
+
+| Parametro | |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url             | Url provista por Bytte para la captura dactilar. |   
+| bytteProtect     | Retorna una llave de la imagene capturada (No retorna imagen)  | 
+| keyProtect     | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
+| timeOut     |    Tiempo de duración de la captura    | 
+| camera     | Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso  | 
+
+### 3.5.2 Respuesta Captura:
 
 
 
@@ -153,7 +172,7 @@ Al realizar los llamados correspondientes para todas las capturas se genera una 
 
 
 
-![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/LogoBytte.png)
+
 | Bytte S.A.S.      |
 | ------------------ |
 | Av. Calle 26 No. 69 D – 91 Torre 1 Of. 407       |
