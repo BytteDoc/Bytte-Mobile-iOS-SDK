@@ -82,7 +82,7 @@ Se deben embeber los archivos como recursos.
 Para realizar el llamado de captura de documentos es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
 (Swift)
-![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/Document.png)
+![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/DocumentV1.png)
 
 
 ### 3.3.1 Configuración Parámetros:
@@ -94,11 +94,12 @@ Para realizar el llamado de captura de documentos es necesario inicializar y agr
 | keyProtect     | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
 | Keyjoin     | Todas las imagenes estan en un unico archivo.    | 
 | imgColor     | Identifica si la imagen está a color o blanco y negro    | 
-| pais     | Identifica el pais y el tipo de documento a capturar CO -> Documento colombiano Hologramas COV2 -> Documento colombiano Digital COCET2 ->  Documento colombiano extrangeria   | 
+| pais     | Identifica el pais y el tipo de documento a capturar ***CO*** -> Documento colombiano Hologramas ***COV2*** -> Documento colombiano Digital ***COCET2*** ->  Documento colombiano extrangeria   | 
 | dataBackDocument     | Extrae información adicional del OCR del documento colombiano (Hologramas)    | 
 | timeOut     |    Tiempo de duración de la captura    | 
 | tipoCaptura     |Identifica la captura a generarse BACK -> reverso, FRONT -> frontal, QR captura qr    | 
 | imageTemplate     | Imagen plantilla documento    | 
+| tipoDocumento     | ***DOCUMENT***  -> Documentos de identidad ***PASPORTDOCUMENT*** -> Pasaporte  ***CREDITCARD*** -> Tarjeta de credito  | 
 
 ### 3.3.2 Respuesta Captura:
 
