@@ -76,7 +76,7 @@ Los archivos mencionados son fundamentales para activar la captura de biometría
 En caso de experimentar problemas con las licencias, comuníquese con nosotros a través del correo electrónico Info@bytte.com.co.
 
 
-### 3.3. Captura Documentos:
+## 3.3. Captura Documentos:
 
 Para realizar el llamado de captura de documentos es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
@@ -99,10 +99,167 @@ Para realizar el llamado de captura de documentos es necesario inicializar y agr
 | timeOut     |Int | Tiempo de duración de la captura.    | 
 | imgTemplate     |UIImage | Imagen plantilla documento.    | 
 
+### 3.3.2 Respuesta Captura Documentos:
+
+### 3.3.2.1 Respuesta Cédula Hologramas Reverso:
+
+| Campo               | Tipo                                                    |
+|---------------------|----------------------------------------------------------|
+| BarcodeBase64       | String               |
+| CiudadExpedicion    | String                                                   |
+| CiudadNacimiento    | String                                                |
+| CodigoOperacion     | String                                                     |
+| DepartamentoCol     | String                                             |
+| FechaExp            | String                                              |
+| FechaNacimiento     | String                                               |
+| MensajeOriginal     | String                                          |
+| MensajeRetorno      | String                                               |
+| NombresCompletos    | String                                                  |
+| NumeroCedula        | String                                                  |
+| NumeroTarjeta       | String                                                   |
+| Pais                | String                                                 |
+| PathImagen          | String            |
+| PrimerApellido      | String                                                     |
+| PrimerNombre        | String                                                     |
+| RH                  | String                                                       |
+| SegundoApellido     | String                                                    |
+| SegundoNombre       | String                                                      |
+| Sexo                | String                                                        |
+| StatusOperacion     | Boolean                                                     |
+| TipoDedo            | String                                                        |
+| TipoDedo2           | String                                                        |
+| VersionCedula       | String                                                       |
+
+### 3.3.2.2 Respuesta Cédula Hologramas Frente:
+
+| Campo            | Tipo                                                    |
+|------------------|----------------------------------------------------------|
+| Apellidos        | String                                                   |
+| CodigoOperacion  | String                                                   |
+| MensajeOriginal  | String                                                   |
+| MensajeRetorno   | String                                                   |
+| Nombres          | String                                                   |
+| NumeroCedula     | String                                                   |
+| PathImagen       | String                                                   |
+| PathImagenFull   | String                                                   |
+| PathImagenRostro | String                                                   |
+| StatusOperacion  | Boolean                                                   |
+
+### 3.3.2.3 Respuesta Cédula Digital Reverso:
+
+| Campo                   | Valor                                                    |
+|-------------------------|----------------------------------------------------------|
+| CodigoOperacion         | String                                                   |
+| MensajeOriginal         | String                                                   |
+| MensajeRetorno          | String                                                   |
+| StatusOperacion         | Boolean                                                   |
+| ReversoMRZ              |                                                          |
+|   - PathImagen          | String                                                   |
+|   - Apellidos           | String                                            |
+|   - CodigoDocumento     | String                                                   |
+|   - Edad                | String                                                   |
+|   - Emisor              | String                                                   |
+|   - FechaExpiracion     | String                                                   |
+|   - FechaNacimiento     | String                                                   |
+|   - MRZ                 | String                                                   |
+|   - Nacionalidad        | String                                                   |
+|   - Nombres             | String                                                   |
+|   - NombresCompletos    | String                                   |
+|   - NumeroDocumento      | String                                                   |
+|   - OPT                 | String                                         |
+|   - RUN                 | String                                                   |
+|   - Sexo                | String                                                   |
+|   - TipoDocumento        | String                                                   |
+|   - Version1            | String                                                   |
+
+### 3.3.2.4 Respuesta Cédula Digital Frente:
+
+| Campo                   | Valor                                                    |
+|-------------------------|----------------------------------------------------------|
+| MensajeOriginal         | String                                                   |
+| MensajeRetorno          | String                                                   |
+| StatusOperacion         | Boolean                                                   |
+| CodigoOperacion         | String                                                   |
+| Frente                  |                                                          |
+|   - PathImagen          | String                                                   |
+|   - PathImagenFull      | String                                                   |
+|   - PathImagenRostro    | String                                                   |
+|   - Nombres             | String                                                   |
+|   - NumeroCedula        | String                                                   |
+
+### 3.3.2.5 Respuesta Cédula Extranjería Reverso:
+
+| Campo               | Valor                                                    |
+|---------------------|----------------------------------------------------------|
+| CodigoOperacion     | String                                                   |
+| MensajeOriginal     | String                                                   |
+| MensajeRetorno      | String                                                   |
+| StatusOperacion     | Boolean                                                   |
+| ReversoMRZ          |                                                          |
+|   - PathImagen      | String                                                   |
+|   - Apellidos       | String                                          |
+|   - CodigoDocumento | String                                                   |
+|   - Edad            | String                                                   |
+|   - Emisor          | String                                                   |
+|   - FechaExpiracion | String                                                   |
+|   - FechaNacimiento | String                                                   |
+|   - MRZ             | String                                                   |
+|   - Nacionalidad    | String                                                   |
+|   - Nombres         | String                                               |
+|   - NombresCompletos| String                                  |
+|   - NumeroDocumento | String                                                   |
+|   - OPT             | String                                   |
+|   - RUN             | String                                                   |
+|   - Sexo            | String                                                   |
+|   - TipoDocumento    | String                                                   |
+|   - Version1        | String                                                   |
+
+
+### 3.3.2.6 Respuesta Cédula Extranjería Frente:
+
+| Campo               | Valor                                                    |
+|---------------------|----------------------------------------------------------|
+| CodigoOperacion     | String                                                   |
+| MensajeOriginal     | String                                                   |
+| MensajeRetorno      | String                                                   |
+| StatusOperacion     | Boolean                                                   |
+| Frente              |                                                          |
+|   - PathImagen      | String                                                   |
+|   - PathImagenFull  | String                                                   |
+|   - PathImagenRostro| String                                                   |
+|   - FechaExpiracion | String                                                   |
+|   - NumeroCedula    | String                                                   |
+|   - IsExpired       | Boolean                                                   |
 
 
 
-### 3.4. Captura Biometria Dactilar:
+### 3.3.2.7 Respuesta Pasaporte:
+
+| Campo                   | Valor          |
+|-------------------------|----------------|
+| Apellidos               | String         |
+| Codigo                  | String         |
+| CodigoOperacion         | String         |
+| Emisor                  | String         |
+| FechaExpiracion         | String         |
+| FechaNacimiento         | String         |
+| IdTipoDocumento         | String         |
+| IdentificadorProceso    | String         |
+| MRZ                     | String         |
+| Nacionalidad            | String         |
+| Nombres                 | String         |
+| NumeroDocumento         | String         |
+| NumeroPersonal          | String         |
+| Opt2                    | String         |
+| PathImagen              | String         |
+| Sexo                    | String         |
+| StatusOperacion         | Boolean         |
+| Version1                | String         |
+| IsExpired               | Boolean         |
+
+
+
+## 3.4. Captura Biometria Dactilar:
 
 Para realizar el llamado de captura dactilar es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
@@ -121,11 +278,11 @@ Para realizar el llamado de captura dactilar es necesario inicializar y agregar 
 | timeOut     |Int | Tiempo de duración de la captura.    | 
 | fingerNumber |Int | Variable dedo a capturar  ***2*** -> Mano derecha. ***7*** -> Mano Izquierda. | 
 
-### Captura Facial
+## Captura Facial
 
 Bytte proporciona diferentes metodos de captura facial. Para comprender las diferencias entre la captura facial ID y Facial IP, así como para validar el licenciamiento, le invitamos a ponerse en contacto con nosotros a través del correo electrónico Info@bytte.com.co.
 
-### 3.5. Captura Biometria Facial ID:
+## 3.5. Captura Biometria Facial ID:
 
 Para realizar el llamado de captura facial ID es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
@@ -145,7 +302,7 @@ Para realizar el llamado de captura facial ID es necesario inicializar y agregar
 
 
 
-### 3.6. Captura Biometria Facial IP:
+## 3.6. Captura Biometria Facial IP:
 
 Para realizar el llamado de captura facial V2 es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
@@ -153,7 +310,7 @@ Para realizar el llamado de captura facial V2 es necesario inicializar y agregar
 ![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/Facev2.png)
 
 
-### 3.5.1 Configuración Parámetros:
+### 3.6.1 Configuración Parámetros:
 
 | Parametro | Tipo | Descripción |
 | ------------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -169,8 +326,8 @@ Para realizar el llamado de captura facial V2 es necesario inicializar y agregar
 
 
 
-### 4. Códigos Respuesta
-#### 4.1. Base Respuesta
+## 4. Códigos Respuesta
+### 4.1. Base Respuesta
 Al realizar los llamados correspondientes para todas las capturas se genera una respuesta base donde se controlan variables del proceso de captura.
 
  > * MensajeOriginal
@@ -179,11 +336,11 @@ Al realizar los llamados correspondientes para todas las capturas se genera una 
  > * StatusOperacion
  > * CodigoError
 
-#### 4.2. Time Out
+### 4.2. Time Out
 ![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/TimeOut.png)
-#### 4.3. Cancelado por el usuario
+### 4.3. Cancelado por el usuario
 ![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Cancelado.png)
-#### 4.4. Captura correcta
+### 4.4. Captura correcta
 
 ![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Correcta.png)
 
