@@ -16,9 +16,9 @@ El presente documento tiene como objetivo proporcionar una guía detallada para 
 ### 1.2. Factores Limitantes
 
 Los factores limitantes para la integración del SDK son:
-* Se debe verificar la calidad de la cámara, es recomendable utilizar dispositivos con cámara que tengan la característica de “Auto Foco” habilitada
-* Se recomiendan cámaras con resolución mayores o iguales a 8 Mega Pixeles para un óptimo rendimiento
-* El SDK no funciona sobre dispositivos virtuales, únicamente sobre dispositivos físicos iPhone
+* Se debe verificar la calidad de la cámara, es recomendable dispositivos con cámara que tengan la característica de “Auto Foco” habilitada
+* Se recomiendan cámaras con resolución mayores o iguales a 8 mega píxeles para un óptimo rendimiento
+* El SDK no funciona sobre dispositivos virtuales, solo en dispositivos físicos iPhone.
 
 ## 2. INSTALACIÓN
 
