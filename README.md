@@ -11,7 +11,7 @@ La información contenida en el presente documento es CONFIDENCIAL, hace parte d
 
 ## 1. INTRODUCCIÓN
 
-El presente documento tiene como objetivo proporcionar una guía detallada para la instalación paso a paso del (SDK) suministrado por Bytte en una aplicación nativa de iOS desarrollada con el entorno de desarrollo integrado (IDE) Xcode
+El presente documento tiene como objetivo proporcionar una guía detallada para la instalación paso a paso del (SDK) suministrado por Bytte en una aplicación nativa de iOS desarrollada con el entorno de desarrollo integrado (IDE) Xcode.
 
 ### 1.2. Factores Limitantes
 
@@ -76,8 +76,6 @@ Los archivos mencionados son fundamentales para activar la captura de biometría
 En caso de experimentar problemas con las licencias, comuníquese con nosotros a través del correo electrónico Info@bytte.com.co.
 
 
-
-
 ### 3.3. Captura Documentos:
 
 Para realizar el llamado de captura de documentos es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
@@ -102,7 +100,6 @@ Para realizar el llamado de captura de documentos es necesario inicializar y agr
 | imgTemplate     |UIImage | Imagen plantilla documento.    | 
 
 
-### 3.3.2 Respuesta Captura Documentos:
 
 
 ### 3.4. Captura Biometria Dactilar:
@@ -146,7 +143,7 @@ Para realizar el llamado de captura facial ID es necesario inicializar y agregar
 | timeOut     |Int | Tiempo de duración de la captura.    | 
 | camera |Enum |Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso | 
 
-### 3.5.2 Respuesta Captura Facial ID:
+
 
 ### 3.6. Captura Biometria Facial IP:
 
@@ -165,7 +162,7 @@ Para realizar el llamado de captura facial V2 es necesario inicializar y agregar
 | timeOut     |Int | Tiempo de duración de la captura.    | 
 | camera |Enum |Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso | 
 
-### 3.5.2 Respuesta Captura Facial IP:
+
 
 
 
