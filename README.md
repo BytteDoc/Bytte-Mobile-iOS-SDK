@@ -2,8 +2,7 @@
 
 # Bytte SDK
     Autor Carlos Garzón.
-    Fecha de creación 15 de Noviembre 2023.
-    versión Documento  -.-.-
+    Fecha de creación 30 de Septiembre 2023.
 
 # Documento Integración SDK Nativo IOS
 ### CONFIDENCIALIDAD
@@ -19,7 +18,7 @@ El presente documento tiene como objetivo proporcionar una guía detallada para 
 Los factores limitantes para la integración del SDK son:
 * Se debe verificar la calidad de la cámara, es recomendable utilizar dispositivos con cámara que tengan la característica de “Auto Foco” habilitada
 * Se recomiendan cámaras con resolución mayores o iguales a 8 Mega Pixeles para un óptimo rendimiento
-* El SDK no funciona sobre dispositivos virtuales, únicamente sobre dispositivos físicos IPhone
+* El SDK no funciona sobre dispositivos virtuales, únicamente sobre dispositivos físicos iPhone
 
 ## 2. INSTALACIÓN
 
@@ -31,7 +30,7 @@ Los factores limitantes para la integración del SDK son:
 
 ### 2.2. Librerías
 
-El SDK está compuesto por funcionalidades de captura de documentos, biometría dactilar y facial. Para implementar estas capacidades, es necesario incorporar las librerias correspondientes. 
+El SDK compone de diversas funcionalidades, entre las que se incluyen captura de documentos, biometría dactilar, biometría facial ID y Facial IP. Para habilitar estas capacidades en su aplicación, es esencial integrar las bibliotecas correspondientes de acuerdo con los términos establecidos en el acuerdo comercial.
 
 A continuación, se detallan las librerias requeridas:
 
@@ -42,9 +41,12 @@ A continuación, se detallan las librerias requeridas:
   > * BlinkID.framework
 
 #### 2.2.2 Biometria Facial
+###### 2.2.2.1 Biometria Facial ID
   > * BytteLibrarySDKFaceID.framework
-  > * BytteLibrarySDKFaceIP.framework
   > * IdentyFace.framework
+
+###### 2.2.2.2 Biometria Facial IP
+  > * BytteLibrarySDKFaceIP.framework
   > * iProov.framework
 
 #### 2.2.3 Biometria Dactilar
@@ -66,42 +68,41 @@ A continuación, se listan los import que la librería expone:
   
 ### 3.2. Activación de la Licencia de Captura:
 
-Bytte facilita el proceso de activación de las capturas mediante la provisión de licencias. Para la captura de documentos, se suministran licencias en formato base64, mientras que para la captura de biometría dactilar y biometría facial, se proporcionan archivos de licencia correspondientes. 
+La activación de licencias está sujeta a un acuerdo comercial. Bytte proporciona archivos de licencia para habilitar las funciones de captura de biometría dactilar y facial ID, de acuerdo con los términos establecidos en dicho acuerdo.
 
-Estos elementos son esenciales para habilitar la captura dentro de la aplicación.
-
-  > * Captura de Huellas
-  > * Captura de Selfie V1
-  
-Se deben embeber los archivos como recursos.
-
+Los archivos mencionados son fundamentales para activar la captura de biometría dactilar y facial ID dentro de la aplicación. Es necesario incorporar estos archivos como recursos, para garantizar el correcto funcionamiento.
 ![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/ArchivosLicencia.png)
+
+En caso de experimentar problemas con las licencias, comuníquese con nosotros a través del correo electrónico Info@bytte.com.co.
+
+
+
 
 ### 3.3. Captura Documentos:
 
 Para realizar el llamado de captura de documentos es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
 (Swift)
-![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/DocumentV1.png)
+![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/DocumentV2.png)
 
 
 ### 3.3.1 Configuración Parámetros:
 
-| Parametro | |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| licenseKey             | Licencia provista por Bytte para la captura de los documentos. |                             
-| bytteProtect     | Retorna una llave de la imagene capturada (No retorna imagen)  | 
-| keyProtect     | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
-| Keyjoin     | Todas las imagenes estan en un unico archivo.    | 
-| imgColor     | Identifica si la imagen está a color o blanco y negro    | 
-| pais     | Identifica el pais y el tipo de documento a capturar ***CO*** -> Documento colombiano Hologramas ***COV2*** -> Documento colombiano Digital ***COCET2*** ->  Documento colombiano extrangeria   | 
-| dataBackDocument     | Extrae información adicional del OCR del documento colombiano (Hologramas)    | 
-| timeOut     |    Tiempo de duración de la captura    | 
-| tipoCaptura     |Identifica la captura a generarse BACK -> reverso, FRONT -> frontal, QR captura qr    | 
-| imageTemplate     | Imagen plantilla documento    | 
-| tipoDocumento     | ***DOCUMENT***  -> Documentos de identidad ***PASPORTDOCUMENT*** -> Pasaporte  ***CREDITCARD*** -> Tarjeta de credito  | 
+| Parametro | Tipo | Descripción |
+| ------------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url             |String | URL proporcionada por Bytte para la captura de documentos. |
+| documentType     |Enum| ***DOCUMENT***  -> Documentos de identidad ***PASPORTDOCUMENT*** -> Pasaporte  ***CREDITCARD*** -> Tarjeta de credito.  | 
+| country     |Enum | Identifica el pais y versión del documento ***CO*** -> Documento colombiano Hologramas ***COV2*** -> Documento colombiano Digital ***COCET2*** ->  Documento colombiano extrangeria.   |
+| captureType     |Enum | Identifica si debe capturar frente o reverso del documento ***BACK*** -> reverso, ***FRONT*** -> frontal.|
+| bytteProtect     |Boolean| Variable por defecto en ***True***. Esta variable retorna un KEY de imagen (No retorna imagenes)   | 
+| keyProtect     |String | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
+| keyJoin     |Boolean | Las imagenes capturadas las retorna en un unico archivo.    | 
+| colorImg     |Boolean | Variable por defecto en ***False***. Esta variable permite o no capturar fotocopias de documento.  | 
+| timeOut     |Int | Tiempo de duración de la captura.    | 
+| imgTemplate     |UIImage | Imagen plantilla documento.    | 
 
-### 3.3.2 Respuesta Captura:
+
+### 3.3.2 Respuesta Captura Documentos:
 
 
 ### 3.4. Captura Biometria Dactilar:
@@ -114,21 +115,22 @@ Para realizar el llamado de captura dactilar es necesario inicializar y agregar 
 
 ### 3.4.1 Configuración Parámetros:
 
-| Parametro | |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url             | Url provista por Bytte para la captura dactilar. |   
-| bytteProtect     | Retorna una llave de la imagene capturada (No retorna imagen)  | 
-| keyProtect     | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
-| Keyjoin     | Todas las imagenes estan en un unico archivo.    | 
-| timeOut     |    Tiempo de duración de la captura    | 
-| fingerNumber     | Variable dedo a capturar  ***2*** -> Mano derecha. ***7*** -> Mano Izquierda. | 
+| Parametro | Tipo | Descripción |
+| ------------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url             |String | URL proporcionada por Bytte para la captura dactilar. |
+| bytteProtect     |Boolean| Variable por defecto en ***True***. Esta variable retorna un KEY de imagen (No retorna imagenes)   | 
+| keyProtect     |String | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
+| keyJoin     |Boolean | Las imagenes capturadas las retorna en un unico archivo.    | 
+| timeOut     |Int | Tiempo de duración de la captura.    | 
+| fingerNumber |Int | Variable dedo a capturar  ***2*** -> Mano derecha. ***7*** -> Mano Izquierda. | 
 
-### 3.4.2 Respuesta Captura:
+### Captura Facial
 
+Bytte proporciona diferentes metodos de captura facial. Para comprender las diferencias entre la captura facial ID y Facial IP, así como para validar el licenciamiento, le invitamos a ponerse en contacto con nosotros a través del correo electrónico Info@bytte.com.co.
 
-### 3.5. Captura Biometria Facial V1:
+### 3.5. Captura Biometria Facial ID:
 
-Para realizar el llamado de captura facial V1 es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
+Para realizar el llamado de captura facial ID es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
 (Swift)
 ![Directories](http://www.bytte.com.co/ftpaccess/Varios/CarlosG/Documentaci%C3%B3n/Bytte/FaceV1.png)
@@ -136,17 +138,17 @@ Para realizar el llamado de captura facial V1 es necesario inicializar y agregar
 
 ### 3.5.1 Configuración Parámetros:
 
-| Parametro | |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url             | Url provista por Bytte para la captura dactilar. |   
-| bytteProtect     | Retorna una llave de la imagene capturada (No retorna imagen)  | 
-| keyProtect     | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
-| timeOut     |    Tiempo de duración de la captura    | 
-| camera     | Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso  | 
+| Parametro | Tipo | Descripción |
+| ------------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url             |String | URL proporcionada por Bytte para la captura dactilar. |
+| bytteProtect     |Boolean| Variable por defecto en ***True***. Esta variable retorna un KEY de imagen (No retorna imagenes)   | 
+| keyProtect     |String | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
+| timeOut     |Int | Tiempo de duración de la captura.    | 
+| camera |Enum |Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso | 
 
-### 3.5.2 Respuesta Captura:
+### 3.5.2 Respuesta Captura Facial ID:
 
-### 3.6. Captura Biometria Facial V2:
+### 3.6. Captura Biometria Facial IP:
 
 Para realizar el llamado de captura facial V2 es necesario inicializar y agregar variables de captura. A continuación, se presenta un ejemplo:
 
@@ -156,14 +158,14 @@ Para realizar el llamado de captura facial V2 es necesario inicializar y agregar
 
 ### 3.5.1 Configuración Parámetros:
 
-| Parametro | |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url             | Url provista por Bytte para la captura dactilar. |   
-| keyProtect     | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
-| timeOut     |    Tiempo de duración de la captura    | 
-| camera     | Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso  | 
+| Parametro | Tipo | Descripción |
+| ------------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url             |String | URL proporcionada por Bytte para la captura dactilar. |
+| keyProtect     |String | Llave de protección para las imagenes. Si lleva un valor diferente a vacío esta retorna la imagen en formato .bytte, el resultado es una imagen cifrada con aes 256 por sesión.    | 
+| timeOut     |Int | Tiempo de duración de la captura.    | 
+| camera |Enum |Indica sobre que camara inicia el sdk ***Front*** -> Camara Frontal ***Back*** -> Camara Reverso | 
 
-### 3.5.2 Respuesta Captura:
+### 3.5.2 Respuesta Captura Facial IP:
 
 
 
